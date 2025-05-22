@@ -1,6 +1,6 @@
 "use client";
-import React, { useTransition, useState } from "react";
 import Image from "next/image";
+import { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 
 const TAB_DATA = [
@@ -8,14 +8,20 @@ const TAB_DATA = [
     title: "Skills",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
-      </ul>
+      <div className="grid grid-cols-2 gap-x-8">
+        <ul className="list-disc pl-4 space-y-1">
+          <li>Java</li>
+          <li>Express</li>
+          <li>SQL</li>
+          <li>Sequelize</li>
+        </ul>
+        <ul className="list-disc pl-4 space-y-1">
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>DSA</li>
+          <li>Node</li>
+        </ul>
+      </div>
     ),
   },
   {
@@ -23,18 +29,9 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
-      </ul>
-    ),
-  },
-  {
-    title: "Certifications",
-    id: "certifications",
-    content: (
-      <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>10th (2018-19) - DAV School - 91.4%</li>
+        <li>12th (2020-21) - DAV School - 94.6%</li>
+        <li>B.Tech IT (2021-25) - GGSIPU - 8.66 GPA</li>
       </ul>
     ),
   },
@@ -53,38 +50,30 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
+        <Image src="/images/about-image.png" width={1200} height={1200} alt="About me image" />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            Hello World, I'm Ishika Gulati, a final-year BTech student in Information Technology at GGSIPU. With a deep passion for coding, I have honed my skills in Java and Data Structures and Algorithms, enabling me to solve complex problems efficiently. My academic journey has been enriched by my dedication to understanding the intricacies of software development.
+            <br /><br />
+            In addition to my core proficiency in Java, I have also gained experience in full-stack development using the MERN stack. This has allowed me to create several well-rounded projects, each demonstrating my ability to build robust, user-friendly applications. Whether it's front-end design or back-end logic, I enjoy the challenge of turning ideas into reality.
+            <br /><br />
+            I am eager to leverage my skills and knowledge to contribute to innovative projects and collaborate with like-minded professionals as I transition into the professional world.
+            <br /><br />
+            So, thank you for gracing my corner of the digital world! Let's embark on a journey together, where innovation meets imagination, and dreams become reality.
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              {" "}
-              Skills{" "}
+              Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              {" "}
-              Education{" "}
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
-            >
-              {" "}
-              Certifications{" "}
+              Education
             </TabButton>
           </div>
           <div className="mt-8">
