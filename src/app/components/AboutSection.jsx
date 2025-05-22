@@ -11,15 +11,15 @@ const TAB_DATA = [
       <div className="grid grid-cols-2 gap-x-8">
         <ul className="list-disc pl-4 space-y-1">
           <li>Java</li>
-          <li>Express</li>
+          <li>ExpressJs</li>
           <li>SQL</li>
-          <li>Sequelize</li>
+          <li>NextJs</li>
         </ul>
         <ul className="list-disc pl-4 space-y-1">
           <li>JavaScript</li>
           <li>React</li>
           <li>DSA</li>
-          <li>Node</li>
+          <li>NodeJs</li>
         </ul>
       </div>
     ),
